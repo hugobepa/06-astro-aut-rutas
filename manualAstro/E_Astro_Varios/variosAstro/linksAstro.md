@@ -16,6 +16,10 @@
 (directivasTemplate)[https://docs.astro.build/en/reference/directives-reference/#client-directives]
 (#transitionpersist-props)[https://docs.astro.build/en/guides/view-transitions/#transitionpersist-props]
 (importmetaglob)[https://docs.astro.build/en/guides/imports/#importmetaglob/]
+(cookiesAstro)[https://docs.astro.build/es/reference/api-reference/#cookies]
+(astroActions)[https://docs.astro.build/en/guides/actions/]
+(middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
+(authAstro)[https://docs.astro.build/en/guides/authentication/]
 
 ### collecions
 
