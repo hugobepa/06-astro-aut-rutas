@@ -60,6 +60,40 @@ import { ClientRouter,fade,side } from 'astro:transitions';
 </a>
 ```
 
+# plantilla middelware
+
+(middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
+
+0. add `output: 'server', ` en `astro.config.mjs`
+
+middleware.local.ts:
+
+```
+vite: {
+    plugins: [tailwindcss()],
+  },
+  output: "server",
+  adapter: netlify(),
+```
+
+1. `/src/middleware.ts`:
+
+```
+import type { MiddlewareNext } from 'astro';
+import { defineMiddleware } from 'astro:middleware';
+
+
+const privateRoutes = ['/protected'];
+
+//context.url
+export const onRequest = defineMiddleware(
+  async ({ url, request, locals, redirect }, next) => {
+
+    return next();
+  }
+);
+```
+
 # EXPLICACION CIcLOS DE CARGA
 
 (cicloTrabaosViewTransitionJS)[https://docs.astro.build/en/guides/view-transitions/#lifecycle-events]

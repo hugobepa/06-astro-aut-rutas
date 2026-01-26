@@ -19,12 +19,45 @@ vite: {
 1. crear middleware ``:
    (middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
 
-- solo se crean middleware asi `src/middleware.ts` o `src/middleware/index.ts`
+- solo se crean middleware asi `src/middleware.ts` o `src/middleware/index.ts`:
+  - mensaje de respuesta:
+    - web status (400,401,403)
+    - bloqueo de poder entrar y pantallita:`headers: {"WWW-Authenticate": 'Basic real="Secure Area"',},`
+    - se obtiene la autorizacion `const authHeader = context.request.headers.get("authorization");`
+    - se verifica si es ruta protegida: `if (privateRoutes.includes(context.url.pathname))`
+
+  ```
+    return new Response("Auth Necesaria", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic real="Secure Area"',
+    },
+  ```
 
 - FICHERO:
 
 ```
+import { defineMiddleware } from "astro:middleware";
 
+// `context` and `next` are automatically typed
+const privateRoutes = ["/protected"];
+
+export const onRequest = defineMiddleware((context, next) => {
+  const authHeader = context.request.headers.get("authorization");
+
+  if (privateRoutes.includes(context.url.pathname)) {
+    if (authHeader) {
+      return next();
+    }
+  }
+
+  return new Response("Auth Necesaria", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic real="Secure Area"',
+    },
+  });
+});
 ```
 
 ## middleware autorizacion
@@ -75,7 +108,21 @@ const checkLocalAuth = (authHeaders: string, next: MiddlewareNext) => {
 
 ### plantilla middelware auth
 
-`/src/middleware.ts`:
+(middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
+
+0. add `output: 'server', ` en `astro.config.mjs`
+
+middleware.local.ts:
+
+```
+vite: {
+    plugins: [tailwindcss()],
+  },
+  output: "server",
+  adapter: netlify(),
+```
+
+1. `/src/middleware.ts`:
 
 ```
 import type { MiddlewareNext } from 'astro';
