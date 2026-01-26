@@ -1,6 +1,37 @@
-recordar  astro.config.mjs
+(middlewareAstro)[https://docs.astro.build/en/guides/middleware/]
+
+# Middleware
+
+## middleware Inicial
+
+0. add `output: 'server', ` en `astro.config.mjs`
 
 middleware.local.ts:
+
+```
+vite: {
+    plugins: [tailwindcss()],
+  },
+  output: "server",
+  adapter: netlify(),
+```
+
+1. crear middleware ``:
+   (middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
+
+- solo se crean middleware asi `src/middleware.ts` o `src/middleware/index.ts`
+
+- FICHERO:
+
+```
+
+```
+
+## middleware autorizacion
+
+### middleware autho demo
+
+0. crear ejemplo autenthificacion local `src/middleware.local.ts`:
 
 ```
 // No funciona por el nombre del archivo
@@ -42,21 +73,22 @@ const checkLocalAuth = (authHeaders: string, next: MiddlewareNext) => {
 };
 ```
 
-middleware.ts:
+### plantilla middelware auth
 
-`````
+`/src/middleware.ts`:
+
+```
 import type { MiddlewareNext } from 'astro';
 import { defineMiddleware } from 'astro:middleware';
 
 
 const privateRoutes = ['/protected'];
 
-
+//context.url
 export const onRequest = defineMiddleware(
   async ({ url, request, locals, redirect }, next) => {
 
     return next();
   }
 );
-````
-`````
+```

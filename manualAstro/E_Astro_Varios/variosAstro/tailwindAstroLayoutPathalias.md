@@ -152,3 +152,15 @@ import **** from '@components/pokemon/PokemonCard.astro'
 import Button from '@interfaces/controls/Button.astro';
 import logoUrl from '@layouts/logo.png?url';
 ```
+
+### deploy
+
+### netlify
+
+(netlifyAstro)[https://docs.netlify.com/build/frameworks/framework-setup-guides/astro/]
+
+0. instalat, T: npx astro add netlify
+
+### cloudfare
+
+(cloudfareAstro)[https://docs.astro.build/es/guides/integrations-guide/cloudflare/]
