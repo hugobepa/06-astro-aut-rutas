@@ -1,5 +1,7 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro/zod";
+import { createUserWithEmailAndPassword, type AuthError } from "firebase/auth";
+import { firebase } from "src/firebase/config";
 
 export const registerUser = defineAction({
   accept: "form",
@@ -18,6 +20,30 @@ export const registerUser = defineAction({
       }); // 30 days
     } else {
       cookies.delete("email", { path: "/" });
+    }
+
+    //creacion d'usuari a la base de dades (simulada aquí)
+    try {
+      const user = await createUserWithEmailAndPassword(
+        firebase.auth,
+        email,
+        password,
+      );
+      //actualizar el nommbre
+      //verificar el correo elecronico
+      return {
+        uid: user.user.uid,
+        email: user.user.email,
+      };
+
+      //return user;
+    } catch (error) {
+      const firebaseError = error as AuthError;
+
+      if (firebaseError.code === "auth/email-already-in-use") {
+        throw new Error("El correo ya está en uso");
+      }
+      throw new Error("Error registering user");
     }
 
     return { ok: true, msg: `User ${name} registered successfully` };

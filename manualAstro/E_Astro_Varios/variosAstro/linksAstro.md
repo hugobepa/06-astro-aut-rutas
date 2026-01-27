@@ -76,7 +76,6 @@
 
 (templates_404)[https://dev.to/stackfindover/35-html-404-page-templates-5bge]
 (componentTailwindsAstro)[https://starwind.dev/]
-(confetti)[https://www.npmjs.com/package/canvas-confetti]
 (tailwindAnimation)[https://www.npmjs.com/package/tailwind-animate]
 
 ### externas templates UI
@@ -87,6 +86,13 @@
 (profileCardTemplate)[https://www.creative-tim.com/twcomponents/component/creating-a-simple-profile-card-with-tailwind-css]
 (login)[https://www.creative-tim.com/twcomponents/component/login-form-ui-by-tailwindcss]
 (nav-bar)[https://www.creative-tim.com/twcomponents/component/navbar-component]
+(creditCard)[https://www.creative-tim.com/twcomponents/component/profile-card-13]
+(avatarAstro)[https://gist.github.com/Klerith/f86dc9e046afb6ade1c4626ef73bcda4]
+
+### externas varias
+
+(confetti)[https://www.npmjs.com/package/canvas-confetti]
+(sweetAlert2 Swal.)[https://www.npmjs.com/package/sweetalert2]
 
 ### externos frameworks islas
 
@@ -114,7 +120,8 @@
 ()[https://www.themoviedb.org/]
 ()[https://developer.themoviedb.org/docs/getting-started]
 
-###themes astro
+### themes astro
+
 (athosfere)[https://astro.build/themes/details/astrosphere/]
 (checkUpdates)[https://www.npmjs.com/package/npm-check-updates]
 
