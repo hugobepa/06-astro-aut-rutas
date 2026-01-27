@@ -1,5 +1,3 @@
-(creditCard)[https://www.creative-tim.com/twcomponents/component/profile-card-13]
-(avatarAstro)[https://gist.github.com/Klerith/f86dc9e046afb6ade1c4626ef73bcda4]
 (sweetAlert2)[https://www.npmjs.com/package/sweetalert2]
 
 # AUTH MAIL PASSWORD

@@ -1,3 +1,23 @@
+(creditCard)[https://www.creative-tim.com/twcomponents/component/profile-card-13]
+(avatarAstro)[https://gist.github.com/Klerith/f86dc9e046afb6ade1c4626ef73bcda4]
+
+0. modificacion `src\pages\protected.astro`:
+   - **IMPORTANTE EXTRACION DATOS PROVISIONAL DESPUES SE PASAN X MIDDLEWARE**
+   - extraemos usuario firebase: `const firebaseUser = firebase.auth.currentUser;`
+   - si viene usuario null se redireciona: `throw Astro.redirect('/login');`
+   - extraemos los datos del firebaseuser para trabajarlos:
+     `const { displayName, email, emailVerified, photoURL } = firebaseUser;`
+   - `displayName` puede venir nulo, le damos algun valor:`const name = displayName ?? 'No display Name';`
+   - borramos contenido y pegamos el codido de estas fuentes:
+     - (creditCard)[https://www.creative-tim.com/twcomponents/component/profile-card-13]
+     - (avatarAstro)[https://gist.github.com/Klerith/f86dc9e046afb6ade1c4626ef73bcda4]
+   - trabajamos con datos en la card:
+     - src={photoURL}, alt={`Avatar de ${name}`},{name.substring(0, 2)}
+     - {emailVerified ? 'Email verificado' : 'Email no verificado'}
+
+     -Archivo:
+
+```
 ---
 import MainLayout from '@layouts/MainLayout.astro';
 import { firebase } from 'src/firebase/config';
@@ -8,7 +28,7 @@ if(!firebaseUser){
   // Redirect to login page if not authenticated
   throw Astro.redirect('/login');
   //return Astro.redirect('/login');
-}   
+}
 
 const { displayName, email, emailVerified, photoURL } = firebaseUser;
 
@@ -37,32 +57,13 @@ const { displayName, email, emailVerified, photoURL } = firebaseUser;
           </div>
         )
       }
-    }    
+    }
 
 
-   
+
      <div class="text-center mt-2 text-3xl font-medium">{name}</div>
      <div class="text-center mt-2 font-light text-sm">{email}</div>
-     <div class="text-center font-normal text-lg"> 
+     <div class="text-center font-normal text-lg">
          {emailVerified ? 'Email verificado' : 'Email no verificado'}
      </div>
-     <div class="px-6 text-center mt-2 font-light text-sm">
-       <p>
-         Front end Developer, avid reader. Love to take a long walk, swim
-       </p>
-     </div>
-     <hr class="mt-8">
-     <div class="flex p-4">
-       <div class="w-1/2 text-center">
-         <span class="font-bold">1.8 k</span> Followers
-       </div>
-       <div class="w-0 border border-gray-300">
-         
-       </div>
-       <div class="w-1/2 text-center">
-         <span class="font-bold">2.0 k</span> Following
-       </div>
-     </div>
-  </div>
-</div>
-</MainLayout>
+```

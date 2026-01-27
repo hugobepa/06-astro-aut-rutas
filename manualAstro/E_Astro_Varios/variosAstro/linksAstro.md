@@ -131,6 +131,12 @@ Una colección curada de enlaces y herramientas para agilizar tu flujo de trabaj
 
 ---
 
+## markdown
+
+(guiaMarkdown)[https://www.markdownguide.org/basic-syntax/]
+(chuletaMarkdown)[https://josema966.gitlab.io/chuleta-markdown.html]
+(chuletaEmoji)[https://www.webfx.com/tools/emoji-cheat-sheet/]
+
 ### 🤖 UI con IA
 
 Herramientas que utilizan inteligencia artificial para generar componentes, prototipos y estilos de interfaz de usuario.
