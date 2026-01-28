@@ -3,16 +3,15 @@ import MainLayout from '@layouts/MainLayout.astro';
 import { firebase } from 'src/firebase/config';
 
 const firebaseUser = firebase.auth.currentUser;
-//firebaseUser ==== null
-if(!firebaseUser){
-  // Redirect to login page if not authenticated
-  throw Astro.redirect('/login');
-  //return Astro.redirect('/login');
-}   
 
+if (firebaseUser === null) {
+  return Astro.redirect('/login');
+}
+
+await firebaseUser?.reload();
 const { displayName, email, emailVerified, photoURL } = firebaseUser;
 
- const name = displayName ?? 'No display Name';
+const name = displayName ?? 'No display Name';
 ---
 
 <MainLayout title="protegida app">

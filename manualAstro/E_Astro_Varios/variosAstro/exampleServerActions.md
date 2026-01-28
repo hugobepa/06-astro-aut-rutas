@@ -137,3 +137,27 @@ const likePost = async () => {
 3. creamos elemento de `.vue` con estructura basica y css `src\components\likes\LikeCounter.vue`:
 4. `src\actions\index.ts`
    src\actions\get-greeting.action.ts
+
+### server action sin input
+
+0. crear `src\actions\auth\logout.action.ts` y relenar `a_accion`:
+   - eliminamos ` input: z.string(),` pero tenemos que mantener `accept: "json",`
+   - al eliminar el `input` tenemos que poner `_` para llamar otras propiedades
+     `handler: async (_, { cookies }) => {`
+   - cerramos la sesion pasandole nuestra identificador ` return await signOut(firebase.auth);`
+
+- Fichero:
+
+```
+import { defineAction } from "astro:actions";
+import { z } from "astro/zod";
+import { signOut } from "firebase/auth";
+import { firebase } from "src/firebase/config";
+
+export const logout = defineAction({
+  accept: "json",
+  handler: async (_, { cookies }) => {
+    return await signOut(firebase.auth);
+  },
+});
+```

@@ -77,6 +77,7 @@
 (templates_404)[https://dev.to/stackfindover/35-html-404-page-templates-5bge]
 (componentTailwindsAstro)[https://starwind.dev/]
 (tailwindAnimation)[https://www.npmjs.com/package/tailwind-animate]
+(escogerFuente)[https://fontpair.co/]
 
 ### externas templates UI
 
