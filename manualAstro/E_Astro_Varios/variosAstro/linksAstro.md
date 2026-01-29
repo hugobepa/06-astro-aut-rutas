@@ -135,6 +135,8 @@
 (cursosCienciasdatos - phyton,sql)[https://www.kaggle.com/learn]
 (mejorFrameworksJS2025)[https://risingstars.js.org/2025/es]
 
+(nextCommonErrors)[https://graphite.com][https://www.youtube.com/watch?v=UFQFvaBtQg0]
+
 ## Recursos Esenciales para Desarrolladores 🚀
 
 Una colección curada de enlaces y herramientas para agilizar tu flujo de trabajo de desarrollo.
