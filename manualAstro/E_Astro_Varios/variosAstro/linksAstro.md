@@ -78,6 +78,7 @@
 (componentTailwindsAstro)[https://starwind.dev/]
 (tailwindAnimation)[https://www.npmjs.com/package/tailwind-animate]
 (escogerFuente)[https://fontpair.co/]
+(sitch)[https://stitch.withgoogle.com/]
 
 ### externas templates UI
 
@@ -132,6 +133,7 @@
 (metabusacador de cursos cursos)[https://www.classcentral.com/]
 (aprenderLenguajeRapido)[https://learnxinyminutes.com/]
 (cursosCienciasdatos - phyton,sql)[https://www.kaggle.com/learn]
+(mejorFrameworksJS2025)[https://risingstars.js.org/2025/es]
 
 ## Recursos Esenciales para Desarrolladores 🚀
 

@@ -5,7 +5,7 @@
 0. subir usuario a firebase `src\actions\auth\register.action.ts`:
    - creamos usuario  
      ` const user = await createUserWithEmailAndPassword(firebase.auth,email,password,);`
-   - devolvemos usuario:
+   - devolvemos usuario formato json:
      `return { uid: user.user.uid, email: user.user.email,};`
    - error usuario creado:
 
