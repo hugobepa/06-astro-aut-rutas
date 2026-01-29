@@ -126,6 +126,13 @@
 (athosfere)[https://astro.build/themes/details/astrosphere/]
 (checkUpdates)[https://www.npmjs.com/package/npm-check-updates]
 
+### varios
+
+(herramietasProgramacion)[https://it-tools.tech/]
+(metabusacador de cursos cursos)[https://www.classcentral.com/]
+(aprenderLenguajeRapido)[https://learnxinyminutes.com/]
+(cursosCienciasdatos - phyton,sql)[https://www.kaggle.com/learn]
+
 ## Recursos Esenciales para Desarrolladores 🚀
 
 Una colección curada de enlaces y herramientas para agilizar tu flujo de trabajo de desarrollo.
