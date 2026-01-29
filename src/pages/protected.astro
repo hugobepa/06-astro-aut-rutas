@@ -1,17 +1,27 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
-import { firebase } from 'src/firebase/config';
+import { Image } from 'astro:assets';
 
-const firebaseUser = firebase.auth.currentUser;
+const { user, isLoggedIn } = Astro.locals;
 
-if (firebaseUser === null) {
+if (!isLoggedIn || !user) {
   return Astro.redirect('/login');
 }
 
-await firebaseUser?.reload();
-const { displayName, email, emailVerified, photoURL } = firebaseUser;
+const { avatar, email, emailVerified, name } = user;
 
-const name = displayName ?? 'No display Name';
+// import { firebase } from 'src/firebase/config';
+
+// const firebaseUser = firebase.auth.currentUser;
+
+// if (firebaseUser === null) {
+//   return Astro.redirect('/login');
+// }
+
+// await firebaseUser?.reload();
+// const { displayName, email, emailVerified, photoURL } = firebaseUser;
+
+// const name = displayName ?? 'No display Name';
 ---
 
 <MainLayout title="protegida app">
@@ -20,10 +30,19 @@ const name = displayName ?? 'No display Name';
   <div class="card w-96 mx-auto bg-white  shadow-xl hover:shadow rounded-2xl">
 
  {
-        photoURL ? (
+        // photoURL ? (
+        //   <img
+        //     class="w-32 mx-auto rounded-full -mt-20 border-8 border-white"
+        //     src={photoURL}
+        //     alt={`Avatar de ${name}`}
+        //     height={128}
+        //     width={128}
+        //   />
+
+         avatar ? (
           <img
             class="w-32 mx-auto rounded-full -mt-20 border-8 border-white"
-            src={photoURL}
+            src={avatar}
             alt={`Avatar de ${name}`}
             height={128}
             width={128}

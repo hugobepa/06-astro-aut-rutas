@@ -20,6 +20,13 @@
 (astroActions)[https://docs.astro.build/en/guides/actions/]
 (middlewareDefinite)[https://docs.astro.build/en/guides/middleware/#middleware-types]
 (authAstro)[https://docs.astro.build/en/guides/authentication/]
+(env)[https://docs.astro.build/es/guides/environment-variables/]
+
+### env.d.ts
+
+(importsTS)[https://docs.astro.build/en/guides/typescript/#using-imports]
+(cambiosAstro5)[https://docs.astro.build/en/guides/upgrade-to/v5/#changed-typescript-configuration]
+(usarVariblesEntornoTS)[https://docs.astro.build/en/guides/environment-variables/#intellisense-for-typescript]
 
 ### collecions
 

@@ -1,5 +1,5 @@
 ---
-
+const { isLoggedIn } = Astro.locals;
 ---
 
 <!-- component -->
@@ -14,10 +14,26 @@
     </div>
     <ul class="flex items-center space-x-6">
       <li class="font-semibold text-gray-700"><a href="/">Home</a></li>
-      <li class="font-semibold text-gray-700"><a href="/protected">protegida</a></li>
-      <li class="font-semibold text-gray-700"><a href="/register">register</a></li>
-      <li class="font-semibold text-gray-700"><a href="/login">login</a></li>
-      <li id="logout" class="font-semibold text-gray-700"><a href="#">logout</a></li>
+         {
+        isLoggedIn && (
+          <li class="font-semibold text-gray-700">
+            <a href="/protected">Protegido</a>
+          </li>
+        )
+      }
+      
+       {
+        !isLoggedIn ? (
+          <li class="font-semibold text-gray-700">
+            <a href="/login">Ingresar</a>
+          </li>
+          <li class="font-semibold text-gray-700"><a href="/register">register</a></li>
+        ) : (
+          <li id="logout" class="font-semibold text-gray-700">
+            <a href="#">Salir</a>
+          </li>
+        )
+      }
      
     </ul>
   </div>

@@ -41,7 +41,8 @@ export const registerUser = defineAction({
 
       // Verificar el correo electrónico
       await sendEmailVerification(firebase.auth.currentUser!, {
-        url: "http://localhost:4321/protected?emailVerified=true",
+        //url: "http://localhost:4321/protected?emailVerified=true",
+        url: `${import.meta.env.WEBSITE_URL}/protected?emailVerified=true`,
       });
 
       return {
